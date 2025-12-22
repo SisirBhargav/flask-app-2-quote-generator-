@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Quote Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+    <h1>AI Quote Generator</h1>
+
+
+    {% if quote %}
+        <hr>
+        <h3>Generated Quote:</h3>
+        <p>{{ quote }}</p>
+    {% endif %}
+
+    {% if author %}
+        <p>{{author}}</p>
+    {% endif %}
+
+</body>
+</html>
