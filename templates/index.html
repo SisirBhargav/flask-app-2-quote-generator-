@@ -3,22 +3,27 @@
 <head>
     <title>AI Quote Generator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 <body>
 
     <h1>AI Quote Generator</h1>
 
+    <hr>
 
     {% if quote %}
-        <hr>
         <h3>Generated Quote:</h3>
         <p>{{ quote }}</p>
     {% endif %}
 
     {% if author %}
-        <p>{{author}}</p>
+        <p><strong>- {{ author }}</strong></p>
     {% endif %}
+
+    <hr>
+
+    <a href="/login">Login</a>
+    <br><br>
+    <a href="/register">Register</a>
 
 </body>
 </html>

@@ -30,14 +30,27 @@ def generate_ai_quote():
     else:
         return "No quote received", "Unknown"
 
-@app.route("/")
-def home():
+@app.route("/ai")
+def quote():
     quote, author = generate_ai_quote()
     return render_template(
         "index.html",
         quote=quote,
         author=author
     )
+
+@app.route("/")
+def home():
+    return render_template("home.html")
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
